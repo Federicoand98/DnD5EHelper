@@ -98,7 +98,7 @@ function searchIntoJson(type, field, search, message) {
 }
 
 function embedMaker(item, type) {
-  const embed;
+  var embed;
 
   if(type == 1) {
 
@@ -115,7 +115,7 @@ function embedMaker(item, type) {
         { name: 'Duration', value: item.duration, inline: true },
         { name: 'Classes', value: item.classes, inline: true },
       ).addField('Description', item.text, false)
-      .setFooter('D&D 5E Helper created by Enrico Mentana');
+      .setFooter('D&D 5E Helper created by CallieTheBard');
 
     return embed;
 
@@ -134,7 +134,7 @@ function embedMaker(item, type) {
         { name: 'Duration', value: item.duration, inline: true },
         { name: 'Classes', value: item.classes, inline: true },
       ).addField('Description', item.text, false)
-      .setFooter('D&D 5E Helper created by Enrico Mentana');
+      .setFooter('D&D 5E Helper created by CallieTheBard');
 
     return embed;
   }
