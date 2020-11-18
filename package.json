@@ -1,0 +1,25 @@
+{
+  "name": "DnD5EHelper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Federicoand98/DnD5EHelper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Federicoand98/DnD5EHelper/issues"
+  },
+  "homepage": "https://github.com/Federicoand98/DnD5EHelper#readme",
+  "dependencies": {
+    "defiant.js": "^2.2.7",
+    "discord.js": "^12.4.1",
+    "xml2js": "^0.4.23"
+  }
+}
