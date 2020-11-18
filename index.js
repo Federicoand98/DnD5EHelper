@@ -78,7 +78,7 @@ function searchIntoJson(type, field, search, message) {
       var query = json.compendium.spell[i][field].toString().toLowerCase();
 
       if(query === search) {
-        message.channel.send(json.compendium.spell[i].text);
+        message.channel.send(embedMaker(json.compendium.spell[i], 2));
       }
     }
 
@@ -94,5 +94,48 @@ function searchIntoJson(type, field, search, message) {
       }
     }
     */
+  }
+}
+
+function embedMaker(item, type) {
+  const embed;
+
+  if(type == 1) {
+
+    embed = new Client.MessageEmbed()
+      .setColor('#0099ff')
+      .setTitle(item.name)
+      .addFields(
+        { name: 'Level', value: item.level, inline: true },
+        { name: 'School', value: item.school, inline: true },
+        { name: 'Ritual', value: item.ritual, inline: true },
+        { name: 'Time', value: item.time, inline: true },
+        { name: 'Range', value: item.range, inline: true },
+        { name: 'Components', value: item.components, inline: true },
+        { name: 'Duration', value: item.duration, inline: true },
+        { name: 'Classes', value: item.classes, inline: true },
+      ).addField('Description', item.text, false)
+      .setFooter('D&D 5E Helper created by Enrico Mentana');
+
+    return embed;
+
+  } else if(type == 2) {
+
+    embed = new Client.MessageEmbed()
+      .setColor('#0099ff')
+      .setTitle(item.name)
+      .addFields(
+        { name: 'Level', value: item.level, inline: true },
+        { name: 'School', value: item.school, inline: true },
+        { name: 'Ritual', value: item.ritual, inline: true },
+        { name: 'Time', value: item.time, inline: true },
+        { name: 'Range', value: item.range, inline: true },
+        { name: 'Components', value: item.components, inline: true },
+        { name: 'Duration', value: item.duration, inline: true },
+        { name: 'Classes', value: item.classes, inline: true },
+      ).addField('Description', item.text, false)
+      .setFooter('D&D 5E Helper created by Enrico Mentana');
+
+    return embed;
   }
 }
