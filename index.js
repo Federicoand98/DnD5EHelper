@@ -133,10 +133,25 @@ function embedMaker(item, type) {
         { name: 'Components', value: item.components, inline: true },
         { name: 'Duration', value: item.duration, inline: true },
         { name: 'Classes', value: item.classes, inline: true },
-      )//.addField('Description', item.text, false)
-      .setDescription(item.text)
-      .setFooter('D&D 5E Helper created by CallieTheBard');
+      );
 
+    if(item.text.toString().length > 1024) {
+        if(item.text.toString().length > 2048) {
+          embed.addField('Description', item.text.toString().substring(0, 1024), false)
+          .addField('.', item.text.toString().substring(1024, 2048), false)
+          .addField('.', item.text.toString().substring(2048, item.text.toString().length), false)
+          .setFooter('D&D 5E Helper created by CallieTheBard');
+        } else {
+          embed.addField('Description', item.text.toString().substring(0, 1024), false)
+          .addField('.', item.text.toString().substring(1024, item.text.toString().length), false)
+          .setFooter('D&D 5E Helper created by CallieTheBard');
+        }
+    } else {
+      embed.addField('Description', item.text, false)
+      .setFooter('D&D 5E Helper created by CallieTheBard');
+    }
+      
     return embed;
+
   }
 }
