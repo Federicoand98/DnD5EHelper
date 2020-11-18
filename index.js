@@ -67,7 +67,7 @@ function searchIntoJson(type, field, search, message) {
       var query = json.compendium.item[i][field].toString().toLowerCase();
 
       if(query === search) {
-        message.channel.send(json.compendium.item[i].text);
+        message.channel.send(embedMaker(json.compendium.item[i], 1));
       }
     }
     
@@ -106,14 +106,14 @@ function embedMaker(item, type) {
       .setColor('#0099ff')
       .setTitle(item.name)
       .addFields(
-        { name: 'Level', value: item.level, inline: true },
-        { name: 'School', value: item.school, inline: true },
-        { name: 'Ritual', value: item.ritual, inline: true },
-        { name: 'Time', value: item.time, inline: true },
-        { name: 'Range', value: item.range, inline: true },
-        { name: 'Components', value: item.components, inline: true },
-        { name: 'Duration', value: item.duration, inline: true },
-        { name: 'Classes', value: item.classes, inline: true },
+        { name: 'Type', value: item.type, inline: true },
+        { name: 'Magic', value: item.magic, inline: true },
+        { name: 'Detail', value: item.detail, inline: true },
+        { name: 'Weight', value: item.weight, inline: true },
+        { name: 'AC', value: item.ac, inline: true },
+        { name: 'Roll', value: item.roll, inline: true },
+        { name: 'DMG 1', value: item.dmg1, inline: true },
+        { name: 'DMG Type', value: item.dmgType, inline: true },
       ).addField('Description', item.text, false)
       .setFooter('D&D 5E Helper created by CallieTheBard');
 
