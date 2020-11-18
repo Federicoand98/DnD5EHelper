@@ -133,7 +133,8 @@ function embedMaker(item, type) {
         { name: 'Components', value: item.components, inline: true },
         { name: 'Duration', value: item.duration, inline: true },
         { name: 'Classes', value: item.classes, inline: true },
-      ).addField('Description', item.text, false)
+      )//.addField('Description', item.text, false)
+      .setDescription(item.text)
       .setFooter('D&D 5E Helper created by CallieTheBard');
 
     return embed;
