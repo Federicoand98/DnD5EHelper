@@ -34,7 +34,7 @@ client.once('ready', () => {
 
 		res = JSON.stringify(result, null , 4);
 		json = JSON.parse(res);
-    });
+	});
 
 	console.log("Online");
 });
