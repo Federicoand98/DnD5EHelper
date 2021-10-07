@@ -1,6 +1,6 @@
 # Packages
 node_modules/
-DB/
+db/
 
 # Miscellaneous
 .tmp/
