@@ -1,5 +1,6 @@
 # Packages
 node_modules/
+db/
 
 # Miscellaneous
 .tmp/
@@ -7,6 +8,3 @@ node_modules/
 .idea/
 .DS_Store
 .env
-
-database.sqlite3
-core.xml
