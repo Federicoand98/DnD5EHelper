@@ -5,8 +5,8 @@ const Client = require("discord.js");
 const fs = require('fs');
 const commands = require('./commands.js');
 const PRomise = require('bluebird');
-const AppDAO = require('./DB/dao');
-const TestRepository = require('./DB/test_repository');
+const AppDAO = require('./dao/dao');
+const TestRepository = require('./dao/test_repository');
 
 const app = express();
 const port = 3000;
