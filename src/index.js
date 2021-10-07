@@ -78,7 +78,7 @@ client.on('message', message => {
 });
 
 function main() {
-	const dao = new AppDAO('./db/database.sqlite3');
+	const dao = new AppDAO('./database.sqlite3');
 	const testRepo = new TestRepository(dao);
 	const testData = { name: 'This is a test' };
 	let testId;
