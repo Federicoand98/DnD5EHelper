@@ -1,1 +1,9 @@
+# Packages
+node_modules/
+
+# Miscellaneous
+.tmp/
+.vscode/
+.idea/
+.DS_Store
 .env

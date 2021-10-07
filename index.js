@@ -1,4 +1,13 @@
+require('dotenv').config();
 const express = require('express');
+const xml2js = require('xml2js');
+const Client = require("discord.js");
+const fs = require('fs');
+const commands = require('./commands.js');
+const PRomise = require('bluebird');
+const AppDAO = require('./DB/dao');
+const TestRepository = require('./DB/test_repository');
+
 const app = express();
 const port = 3000;
 
@@ -9,13 +18,7 @@ app.listen(port, () => console.log(""));
 /*--------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-const Client = require("discord.js");
 const client = new Client.Client();
-
-const xml2js = require('xml2js');
-const fs = require('fs');
-
-const commands = require('./commands.js');
 
 var json;
 var res;
@@ -37,6 +40,8 @@ client.once('ready', () => {
 	});
 
 	console.log("Online");
+
+	main();
 });
 
 client.on('message', message => {
@@ -65,5 +70,31 @@ client.on('message', message => {
     
 		commands.m_roll(message, Client);
 
+	} else if(parts[0] === "!setup") {
+
+	} else if(parts[0] === "!get") {
+
 	}
 });
+
+function main() {
+	const dao = new AppDAO('./DB/database.sqlite3');
+	const testRepo = new TestRepository(dao);
+	const testData = { name: 'This is a test' };
+	let testId;
+
+	testRepo.createTable()
+		.then(() => testRepo.create(testData.name))
+		.then(() => testRepo.getAll())
+		.then((tests) => {
+			console.log('\nRetreived project from database');
+			
+			tests.forEach(element => {
+				console.log('\nId: ' + element.id);
+				console.log('Name: ' + element.name);
+			});
+		}).catch((err) => {
+			console.log('Error: ');
+			console.log(JSON.stringify(err));
+		});
+}
