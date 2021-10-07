@@ -26,7 +26,7 @@ var res;
 client.login(process.env.TOKEN);
 
 client.once('ready', () => {
-	const xml = fs.readFileSync('core.xml');
+	const xml = fs.readFileSync('./db/core.xml');
 	const parser = new xml2js.Parser();
 
 	xml2js.parseString(xml, {mergeAttrs: true}, (err, result) => {
