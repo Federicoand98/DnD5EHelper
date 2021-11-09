@@ -1,4 +1,4 @@
-const embedMaker = require('./utils/embed_maker.js');
+const { itemEmbed, spellEmbed } = require('../utils/embed_maker.js');
 
 function roll(message, Client) {
     var separatori = ['\\\+', ' '];
@@ -131,18 +131,20 @@ function m_roll(message, Client) {
 function searchIntoJson(type, field, search, message, json, Client) {
     if(type == 1) {
     // items
+
 		for(var i = 0; i < Object.keys(json.compendium.item).length; i++) {
 			var query = json.compendium.item[i][field].toString().toLowerCase();
 			if(query === search) {
-				message.channel.send(embedMaker(json.compendium.item[i], 1, Client));
+				message.channel.send(itemEmbed(json.compendium.item[i], Client));
 			}
 		}
     } else if(type == 2) {
     // spells
+
 		for(var i = 0; i < Object.keys(json.compendium.spell).length; i++) {
 			var query = json.compendium.spell[i][field].toString().toLowerCase();
 			if(query === search) {
-				message.channel.send(embedMaker(json.compendium.spell[i], 2, Client));
+				message.channel.send(spellEmbed(json.compendium.spell[i], Client));
 			}
 		}
     } else if(type == 3) {

@@ -77,6 +77,7 @@ client.on('message', message => {
 	}
 });
 
+/*
 function main() {
 	const dao = new AppDAO('./db/database.sqlite3');
 	const testRepo = new TestRepository(dao);
@@ -98,3 +99,4 @@ function main() {
 			console.log(JSON.stringify(err));
 		});
 }
+*/
