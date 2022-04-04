@@ -43,6 +43,8 @@
     <br /> 
     <br />
     <a href="https://discord.com/api/oauth2/authorize?client_id=778590526588977163&permissions=517544073280&scope=bot">Click this link to add this Bot to your Discord Server.</a>
+    <br/>
+    <br />
     ·
     <a href="https://github.com/Federicoand98/DnD5EHelper/issues">Report Bug</a>
     ·
