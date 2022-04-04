@@ -87,7 +87,7 @@
 
 #### Usage:
 The bot's command are:
-- **!d**[type of dice]  -> to roll a single specific die
+- **!d**[type of die]  -> to roll a single specific die
 - **!**[number of dice]**d**[type of dice]  -> to roll a certain amount of dice
 - **!spell** [name of the spell]    -> to retrive spell informations
 
