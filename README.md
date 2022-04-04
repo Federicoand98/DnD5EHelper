@@ -30,7 +30,7 @@
 
 <!-- PROJECT LOGO -->
 <p align="center">
-  <img src="https://github.com/Federicoand98/DnD5EHelper/blob/dnd-helper-v2/imgs/logo.png" alt="logo" height="500" width="400"
+  <img src="/imgs/logo.jpg" alt="logo"
 </p>   
   
 <br />
